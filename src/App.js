@@ -1,25 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import React,{useState} from "react";
+import Parent from "./Components/Parent";
+import Child from "./Components/Child";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import "./App.css"
+
+const App = () => {
+  const [itemsArray, setItemsArray] = useState([]);
+  console.log(itemsArray)
+
+    return(
+        <div className="App">
+            <Parent itemsArray={itemsArray} setItemsArray={setItemsArray}/>
+            <Child  itemsArray={itemsArray} setItemsArray={setItemsArray}/>
+        </div>
+    )
 }
 
 export default App;
